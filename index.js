@@ -1,0 +1,11 @@
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/home', (req, res) => {
+  res.send('Hello dari Express!');
+});
+
+app.listen(port, () => {
+  console.log(`Server jalan di http://localhost:${port}`);
+});
