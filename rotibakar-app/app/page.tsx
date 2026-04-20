@@ -1,74 +1,123 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 export default function Home() {
-  // Fungsi Sakti buat kirim pesanan ke WhatsApp
-  const handlePesan = (menu: string, harga: string) => {
-    const nomorWA = "6281234567890"; // GANTI dengan nomor WhatsApp kamu/UMKM
-    const pesan = `Halo Roti Bakar Executive! 🍞\n\nSaya ingin memesan:\n✨ *${menu}*\n💰 Harga: ${harga}\n\nMohon diproses ya, terima kasih!`;
-    
+  const [qty1, setQty1] = useState(1);
+  const [qty2, setQty2] = useState(1);
+
+  const handlePesan = (menu: string, harga: string, qty: number) => {
+    const nomorWA = "6281515902930";
+    const pesan = `Halo Roti Bakar Executive! 🍞\n\nSaya ingin memesan:\n✨ *${menu}*\n📦 Jumlah: ${qty}\n💰 Harga: ${harga}\n\nMohon diproses ya, terima kasih!`;
+
     const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
     window.open(url, "_blank");
   };
 
   return (
     <main className="min-h-screen bg-[#fdfcfb] text-[#442c2e] font-sans">
-      {/* Header Ala Executive */}
-      <header className="py-16 px-6 text-center bg-white border-b border-stone-100 shadow-sm">
+
+      {/* Navigasi */}
+      <nav className="bg-[#442c2e] p-4 flex justify-center sticky top-0 z-10 shadow-lg">
+        <div className="flex gap-3 text-sm font-medium">
+          <a
+            href="#"
+            className="text-stone-200 px-3 py-1 rounded-full hover:bg-[#7f4015] hover:text-white transition"
+          >
+            Home
+          </a>
+          <a
+            href="#menu"
+            className="text-stone-200 px-3 py-1 rounded-full hover:bg-[#7f4015] hover:text-white transition"
+          >
+            Menu
+          </a>
+          <a
+            href="#keranjang"
+            className="text-stone-200 px-3 py-1 rounded-full hover:bg-[#7f4015] hover:text-white transition"
+          >
+            Keranjang
+          </a>
+        </div>
+      </nav>
+
+      /* Header */
+      <header className="py-16 px-6 text-center b
+      g-white border-b border-stone-100 shadow-sm">
         <div className="max-w-4xl mx-auto">
-          <span className="text-[#b45309] font-bold tracking-[0.2em] text-xs uppercase">Premium Quality</span>
+          <span className="text-[#b45309] font-bold tracking-[0.2em] text-xs uppercase">
+            Premium Quality
+          </span>
           <h1 className="text-4xl md:text-5xl font-serif font-black text-[#78350f] mt-2 mb-4 tracking-tight">
             Roti Bakar Executive
           </h1>
-          <p className="text-stone-500 italic text-lg font-light">"Sentuhan Mewah dalam Setiap Gigitan"</p>
+          <p className="text-stone-500 italic text-lg font-light">
+            "Sentuhan Mewah dalam Setiap Gigitan"
+          </p>
           <div className="h-1 w-24 bg-[#b45309] mx-auto mt-6 rounded-full"></div>
         </div>
       </header>
 
-      {/* Grid Katalog Menu */}
-      <section className="max-w-5xl mx-auto py-16 px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
-        
-        {/* Card Menu 1 */}
-        <div className="group bg-white rounded-[2rem] overflow-hidden shadow-xl shadow-stone-200/40 border border-stone-100 hover:scale-[1.03] transition-all duration-300">
-          <div className="h-56 bg-stone-100 flex items-center justify-center text-stone-400 group-hover:bg-stone-200 transition-colors">
-            {/* Nanti taruh foto Roti Coklat kamu di folder public */}
-            <span className="text-sm font-medium uppercase tracking-widest">Foto Produk 1</span>
+      {/* MENU */}
+      <section id="menu" className="max-w-5xl mx-auto py-16 px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
+
+        {/* MENU 1 */}
+        <div className="group bg-white rounded-[2rem] overflow-hidden shadow-xl border border-stone-100 hover:scale-[1.03] transition">
+          <div className="h-56 bg-stone-100 flex items-center justify-center text-stone-400">
+            Foto Produk 1
           </div>
+
           <div className="p-8">
-            <h3 className="text-2xl font-bold text-[#442c2e] mb-2">Coklat Lumer Premium</h3>
-            <p className="text-stone-500 text-sm leading-relaxed mb-6">
-              Roti gandum pilihan dipanggang sempurna dengan lelehan coklat Belgia melimpah di dalamnya.
+            <h3 className="text-2xl font-bold mb-2">Coklat Lumer Premium</h3>
+            <p className="text-sm text-stone-500 mb-6">
+              Roti gandum dengan coklat Belgia premium.
             </p>
-            <div className="flex justify-between items-center border-t border-stone-50 pt-6">
-              <span className="text-xl font-black text-[#b45309]">Rp 15.000</span>
-              <button 
-                onClick={() => handlePesan("Coklat Lumer Premium", "Rp 15.000")}
-                className="bg-[#442c2e] text-white px-8 py-3 rounded-full font-bold hover:bg-[#78350f] transition-all shadow-lg shadow-[#442c2e]/30 active:scale-95"
+
+            {/* QTY */}
+            <div className="flex items-center gap-3 mb-4">
+              <button onClick={() => setQty1(qty1 > 1 ? qty1 - 1 : 1)} className="px-3 py-1 bg-stone-100 rounded-full">-</button>
+              <span className="font-bold text-sm">{qty1}</span>
+              <button onClick={() => setQty1(qty1 + 1)} className="px-3 py-1 bg-stone-100 rounded-full">+</button>
+            </div>
+
+            <div className="flex justify-between items-center border-t pt-6">
+              <span className="font-black text-[#b45309]">Rp 15.000</span>
+              <button
+                onClick={() => handlePesan("Coklat Lumer Premium", "Rp 15.000", qty1)}
+                className="bg-[#442c2e] text-white px-6 py-2 rounded-full"
               >
-                Pesan Sekarang
+                Pesan
               </button>
             </div>
           </div>
         </div>
 
-        {/* Card Menu 2 */}
-        <div className="group bg-white rounded-[2rem] overflow-hidden shadow-xl shadow-stone-200/40 border border-stone-100 hover:scale-[1.03] transition-all duration-300">
-          <div className="h-56 bg-stone-100 flex items-center justify-center text-stone-400 group-hover:bg-stone-200 transition-colors">
-             <span className="text-sm font-medium uppercase tracking-widest">Foto Produk 2</span>
+        {/* MENU 2 */}
+        <div className="group bg-white rounded-[2rem] overflow-hidden shadow-xl border border-stone-100 hover:scale-[1.03] transition">
+          <div className="h-56 bg-stone-100 flex items-center justify-center text-stone-400">
+            Foto Produk 2
           </div>
+
           <div className="p-8">
-            <h3 className="text-2xl font-bold text-[#442c2e] mb-2">Keju Spesial Double</h3>
-            <p className="text-stone-500 text-sm leading-relaxed mb-6">
-              Perpaduan keju cheddar parut dan saus keju rahasia yang memberikan sensasi gurih tiada tara.
+            <h3 className="text-2xl font-bold mb-2">Keju Spesial Double</h3>
+            <p className="text-sm text-stone-500 mb-6">
+              Keju melimpah dengan saus spesial.
             </p>
-            <div className="flex justify-between items-center border-t border-stone-50 pt-6">
-              <span className="text-xl font-black text-[#b45309]">Rp 18.000</span>
-              <button 
-                onClick={() => handlePesan("Keju Spesial Double", "Rp 18.000")}
-                className="bg-[#442c2e] text-white px-8 py-3 rounded-full font-bold hover:bg-[#78350f] transition-all shadow-lg shadow-[#442c2e]/30 active:scale-95"
+
+            {/* QTY */}
+            <div className="flex items-center gap-3 mb-4">
+              <button onClick={() => setQty2(qty2 > 1 ? qty2 - 1 : 1)} className="px-3 py-1 bg-stone-100 rounded-full">-</button>
+              <span className="font-bold text-sm">{qty2}</span>
+              <button onClick={() => setQty2(qty2 + 1)} className="px-3 py-1 bg-stone-100 rounded-full">+</button>
+            </div>
+
+            <div className="flex justify-between items-center border-t pt-6">
+              <span className="font-black text-[#b45309]">Rp 18.000</span>
+              <button
+                onClick={() => handlePesan("Keju Spesial Double", "Rp 18.000", qty2)}
+                className="bg-[#442c2e] text-white px-6 py-2 rounded-full"
               >
-                Pesan Sekarang
+                Pesan
               </button>
             </div>
           </div>
@@ -76,9 +125,17 @@ export default function Home() {
 
       </section>
 
-      {/* Footer Sederhana */}
-      <footer className="py-12 border-t border-stone-100 text-center text-stone-400 text-xs tracking-widest uppercase">
-        &copy; 2026 Roti Bakar Executive &bull; UMKM Digital Solution
+      {/* ✅ KERANJANG (placeholder dulu) */}
+      <section id="keranjang" className="max-w-5xl mx-auto py-16 px-6">
+        <h2 className="text-2xl font-bold mb-4">Keranjang Pesanan</h2>
+        <p className="text-stone-500 text-sm">
+          Keranjang masih kosong. (Nanti bisa dikembangkan jadi multi-order)
+        </p>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 border-t text-center text-xs text-stone-400 uppercase">
+        &copy; 2026 Roti Bakar Executive • UMKM Digital Solution
       </footer>
     </main>
   );
