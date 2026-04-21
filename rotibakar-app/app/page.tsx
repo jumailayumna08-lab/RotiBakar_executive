@@ -1,142 +1,121 @@
-"use client";
-
-import React, { useState } from "react";
+import "./Landingpage.css";
 
 export default function Home() {
-  const [qty1, setQty1] = useState(1);
-  const [qty2, setQty2] = useState(1);
-
-  const handlePesan = (menu: string, harga: string, qty: number) => {
-    const nomorWA = "6281515902930";
-    const pesan = `Halo Roti Bakar Executive! 🍞\n\nSaya ingin memesan:\n✨ *${menu}*\n📦 Jumlah: ${qty}\n💰 Harga: ${harga}\n\nMohon diproses ya, terima kasih!`;
-
-    const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
-    window.open(url, "_blank");
-  };
-
   return (
-    <main className="min-h-screen bg-[#fdfcfb] text-[#442c2e] font-sans">
+    <main className="container">
 
-      {/* Navigasi */}
-      <nav className="bg-[#442c2e] p-4 flex justify-center sticky top-0 z-10 shadow-lg">
-        <div className="flex gap-3 text-sm font-medium">
-          <a
-            href="#"
-            className="text-stone-200 px-3 py-1 rounded-full hover:bg-[#7f4015] hover:text-white transition"
-          >
-            Home
-          </a>
-          <a
-            href="#menu"
-            className="text-stone-200 px-3 py-1 rounded-full hover:bg-[#7f4015] hover:text-white transition"
-          >
-            Menu
-          </a>
-          <a
-            href="#keranjang"
-            className="text-stone-200 px-3 py-1 rounded-full hover:bg-[#7f4015] hover:text-white transition"
-          >
-            Keranjang
-          </a>
+      {/* NAVBAR */}
+      <header className="nav">
+        <div className="logo">
+          <img src="/assets/3894.png" alt="logo" />
+          <p>ROTI BAKAR EXECUTIVE</p>
         </div>
-      </nav>
 
-      /* Header */
-      <header className="py-16 px-6 text-center b
-      g-white border-b border-stone-100 shadow-sm">
-        <div className="max-w-4xl mx-auto">
-          <span className="text-[#b45309] font-bold tracking-[0.2em] text-xs uppercase">
-            Premium Quality
-          </span>
-          <h1 className="text-4xl md:text-5xl font-serif font-black text-[#78350f] mt-2 mb-4 tracking-tight">
-            Roti Bakar Executive
-          </h1>
-          <p className="text-stone-500 italic text-lg font-light">
-            "Sentuhan Mewah dalam Setiap Gigitan"
-          </p>
-          <div className="h-1 w-24 bg-[#b45309] mx-auto mt-6 rounded-full"></div>
-        </div>
+        <nav className="menu">
+          <p>Beranda</p>
+          <p>Layanan</p>
+          <p>FAQ</p>
+          <p>Tentang Kami</p>
+        </nav>
       </header>
 
-      {/* MENU */}
-      <section id="menu" className="max-w-5xl mx-auto py-16 px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
-
-        {/* MENU 1 */}
-        <div className="group bg-white rounded-[2rem] overflow-hidden shadow-xl border border-stone-100 hover:scale-[1.03] transition">
-          <div className="h-56 bg-stone-100 flex items-center justify-center text-stone-400">
-            Foto Produk 1
-          </div>
-
-          <div className="p-8">
-            <h3 className="text-2xl font-bold mb-2">Coklat Lumer Premium</h3>
-            <p className="text-sm text-stone-500 mb-6">
-              Roti gandum dengan coklat Belgia premium.
-            </p>
-
-            {/* QTY */}
-            <div className="flex items-center gap-3 mb-4">
-              <button onClick={() => setQty1(qty1 > 1 ? qty1 - 1 : 1)} className="px-3 py-1 bg-stone-100 rounded-full">-</button>
-              <span className="font-bold text-sm">{qty1}</span>
-              <button onClick={() => setQty1(qty1 + 1)} className="px-3 py-1 bg-stone-100 rounded-full">+</button>
-            </div>
-
-            <div className="flex justify-between items-center border-t pt-6">
-              <span className="font-black text-[#b45309]">Rp 15.000</span>
-              <button
-                onClick={() => handlePesan("Coklat Lumer Premium", "Rp 15.000", qty1)}
-                className="bg-[#442c2e] text-white px-6 py-2 rounded-full"
-              >
-                Pesan
-              </button>
-            </div>
-          </div>
+      {/* HERO */}
+      <section className="hero">
+        <div className="hero-text">
+          <h1>ROTI BAKAR PREMIUM</h1>
+          <h2>FAVORIT</h2>
+          <p>
+            Kelezatan Premium, Topping Melimpah,
+            Higienis & Fresh Setiap Hari!
+          </p>
         </div>
 
-        {/* MENU 2 */}
-        <div className="group bg-white rounded-[2rem] overflow-hidden shadow-xl border border-stone-100 hover:scale-[1.03] transition">
-          <div className="h-56 bg-stone-100 flex items-center justify-center text-stone-400">
-            Foto Produk 2
+        <img
+          src="/assets/38123.png"
+          alt="roti bakar"
+          className="hero-img"
+        />
+      </section>
+
+      {/* PRODUK */}
+      <section className="produk">
+        <h2>Menu Favorit</h2>
+        
+         <div className="produk-grid">
+          <div className="card">
+            <img src="/assets/roti-coklat.png" alt="roti coklat" />
+            <p>Roti Coklat</p>
           </div>
-
-          <div className="p-8">
-            <h3 className="text-2xl font-bold mb-2">Keju Spesial Double</h3>
-            <p className="text-sm text-stone-500 mb-6">
-              Keju melimpah dengan saus spesial.
-            </p>
-
-            {/* QTY */}
-            <div className="flex items-center gap-3 mb-4">
-              <button onClick={() => setQty2(qty2 > 1 ? qty2 - 1 : 1)} className="px-3 py-1 bg-stone-100 rounded-full">-</button>
-              <span className="font-bold text-sm">{qty2}</span>
-              <button onClick={() => setQty2(qty2 + 1)} className="px-3 py-1 bg-stone-100 rounded-full">+</button>
-            </div>
-
-            <div className="flex justify-between items-center border-t pt-6">
-              <span className="font-black text-[#b45309]">Rp 18.000</span>
-              <button
-                onClick={() => handlePesan("Keju Spesial Double", "Rp 18.000", qty2)}
-                className="bg-[#442c2e] text-white px-6 py-2 rounded-full"
-              >
-                Pesan
-              </button>
-            </div>
+          
+          <div className="card">
+            <img src="/assets/roti-keju.png" alt="roti keju" />
+            <p>Roti Keju</p>
+          </div>
+          
+          <div className="card">
+            <img src="/assets/roti-strawberry.png" alt="roti strawberry" />
+            <p>Roti Strawberry</p>
           </div>
         </div>
-
       </section>
 
-      {/* ✅ KERANJANG (placeholder dulu) */}
-      <section id="keranjang" className="max-w-5xl mx-auto py-16 px-6">
-        <h2 className="text-2xl font-bold mb-4">Keranjang Pesanan</h2>
-        <p className="text-stone-500 text-sm">
-          Keranjang masih kosong. (Nanti bisa dikembangkan jadi multi-order)
-        </p>
-      </section>
+      {/* LOKASI KAMI (FIX GRID) */}
+      <section className="lokasi-section">
+        <h2>Lokasi Kami</h2>
+        
+        <div className="lokasi-grid">
+    
+      {/* KIRI - LIST CABANG */}
+      <div className="lokasi-list">
+        
+        <div className="lokasi-card">
+          <h4>Kediri Bakar Executive</h4>
+          <p>📍 Jl. Contoh Alamat No.1</p>
+          <p>🕒 16.00–21.30</p>
+          <p>📞 0823-3460-5032</p>
+        </div>
 
-      {/* Footer */}
-      <footer className="py-12 border-t text-center text-xs text-stone-400 uppercase">
-        &copy; 2026 Roti Bakar Executive • UMKM Digital Solution
+        <div className="lokasi-card">
+          <h4>Paris Bakar Executive</h4>
+          <p>📍 Jl. Contoh Alamat No.2</p>
+          <p>🕒 16.00–21.30</p>
+          <p>📞 0823-3460-5032</p>
+        </div>
+
+        <div className="lokasi-card">
+          <h4>Roti Bakar Executive</h4>
+          <p>📍 Jl. Contoh Alamat No.3</p>
+          <p>🕒 16.00–21.30</p>
+          <p>📞 0823-3460-5032</p>
+        </div>
+
+        <div className="lokasi-card">
+          <h4>Roti Bakar Executive 4</h4>
+          <p>📍 Jl. Contoh Alamat No.4</p>
+          <p>🕒 16.00–21.30</p>
+          <p>📞 0823-3460-5032</p>
+        </div>
+
+      </div>
+
+      {/* KANAN - MAPS */}
+      <div className="maps-list">
+        <iframe src="https://www.google.com/maps?q=-8.212,111.938&output=embed"></iframe>
+        <iframe src="https://www.google.com/maps?q=-8.210,111.940&output=embed"></iframe>
+        <iframe src="https://www.google.com/maps?q=-8.208,111.942&output=embed"></iframe>
+        <iframe src="https://www.google.com/maps?q=-8.206,111.944&output=embed"></iframe>
+      </div>
+
+      </div>
+    </section>
+
+      {/* FOOTER */}
+      <footer className="footer">
+        <h3>ROTI BAKAR EXECUTIVE</h3>
+        <p>Roti Bakar Terpercaya</p>
+        <p>Email: RotiBakarExecutive@gmail.com</p>
       </footer>
+
     </main>
   );
 }
