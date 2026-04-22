@@ -59,15 +59,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* LOKASI KAMI (FIX GRID) */}
-      <section className="lokasi-section">
-        <h2>Lokasi Kami</h2>
-        
-        <div className="lokasi-grid">
-    
-      {/* KIRI - LIST CABANG */}
       <div className="lokasi-list">
-        
+
+        {/* KIRI */}
+      <div className="lokasi-list">
         <div className="lokasi-card">
           <h4>Kediri Bakar Executive</h4>
           <p>📍 Jl. Contoh Alamat No.1</p>
@@ -95,10 +90,9 @@ export default function Home() {
           <p>🕒 16.00–21.30</p>
           <p>📞 0823-3460-5032</p>
         </div>
-
+      </div>
       </div>
 
-      {/* KANAN - MAPS */}
       <div className="maps-list">
         <iframe src="https://www.google.com/maps?q=-8.212,111.938&output=embed"></iframe>
         <iframe src="https://www.google.com/maps?q=-8.210,111.940&output=embed"></iframe>
@@ -106,6 +100,32 @@ export default function Home() {
         <iframe src="https://www.google.com/maps?q=-8.206,111.944&output=embed"></iframe>
       </div>
 
+      <section className="kenapa">
+        <h2>Mengapa Harus Roti Bakar Executive?</h2>
+        
+        <div className="kenapa-grid">
+          <div className="kenapa-card">
+            <h4>⭐ Bahan Premium</h4>
+            <p>
+              Kami menggunakan roti berkualitas tinggi dan topping melimpah
+              untuk rasa maksimal.
+            </p>
+          </div>
+
+        <div className="kenapa-card">
+          <h4>🔥 Dibuat Fresh</h4>
+          <p>
+            Setiap pesanan dibuat langsung saat dipesan, selalu hangat
+            dan nikmat.
+          </p>
+        </div>
+
+        <div className="kenapa-card">
+          <h4>🏆 Kualitas Terjaga</h4>
+          <p>
+            Proses higienis dan standar kualitas tinggi untuk kepuasan pelanggan.
+          </p>
+        </div>
       </div>
     </section>
 
