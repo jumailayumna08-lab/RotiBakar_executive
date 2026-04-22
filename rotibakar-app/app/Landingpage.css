@@ -214,6 +214,16 @@ body {
   margin-bottom: 30px;
 }
 
+.maps-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.maps-list iframe {
+  height: 150px;
+}
+
 .lokasi-card {
   background: #fff;
   padding: 16px;
@@ -225,16 +235,6 @@ body {
 
 .lokasi-card:hover {
   transform: translateY(-5px);
-}
-
-.maps-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.maps-list iframe {
-  height: 150px;
 }
 
 /* RESPONSIVE */
@@ -264,4 +264,31 @@ body {
   background: #fff;
   padding: 20px;
   border-radius: 12px;
+}
+
+.testimoni {
+  text-align: center;
+  color: #5a2e0c;
+}
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.testi-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.btn {
+  background: #c48a4a;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
 }
