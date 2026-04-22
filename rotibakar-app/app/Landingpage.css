@@ -187,9 +187,10 @@ body {
 
 /* SECTION LOKASI */
 .lokasi-section {
-  margin-top: 60px;
+  margin-top: 80px;
   text-align: center;
   color: #5a2e0c;
+  
 }
 
 .lokasi-section h2 {
@@ -207,7 +208,19 @@ body {
 /* KIRI (LIST) */
 .lokasi-list {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  margin-bottom: 30px;
+}
+
+.maps-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.maps-list iframe {
+  height: 150px;
 }
 
 .lokasi-card {
@@ -215,25 +228,12 @@ body {
   padding: 16px;
   border-radius: 12px;
   text-align: left;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
 }
 
-.lokasi-card h4 {
-  margin-bottom: 8px;
-}
-
-/* KANAN (MAPS GRID) */
-.maps-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.maps-list iframe {
-  width: 100%;
-  height: 160px;
-  border-radius: 12px;
-  border: none;
+.lokasi-card:hover {
+  transform: translateY(-5px);
 }
 
 /* RESPONSIVE */
@@ -245,4 +245,49 @@ body {
   .maps-list {
     grid-template-columns: 1fr;
   }
+}
+
+.kenapa {
+  text-align: center;
+  color: #5a2e0c;
+}
+
+.kenapa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.kenapa-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.testimoni {
+  text-align: center;
+  color: #5a2e0c;
+}
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.testi-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.btn {
+  background: #c48a4a;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
 }
