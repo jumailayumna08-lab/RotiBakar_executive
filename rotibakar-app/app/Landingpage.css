@@ -46,13 +46,12 @@ body {
   color: #5a2e0c;
 }
 
-/* HERO */
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
 
-  background: #c48a4a;
+  background: #c48a4a;   
   padding: 40px;
   border-radius: 16px;
   color: white;
