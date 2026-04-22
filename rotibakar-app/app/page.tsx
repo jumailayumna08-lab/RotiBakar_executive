@@ -129,52 +129,11 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="testimoni">
-      <h2>Apa Kata Pelanggan Setia Kami</h2>
-      
-      <div className="testi-grid">
-        <div className="testi-card">
-          <p>⭐⭐⭐⭐⭐</p>
-          <p>"Rotinya enak banget, toppingnya melimpah!"</p>
-        </div>
-
-        <div className="testi-card">
-          <p>⭐⭐⭐⭐⭐</p>
-          <p>"Selalu beli di sini, gak pernah kecewa."</p>
-        </div>
-
-        <div className="testi-card">
-          <p>⭐⭐⭐⭐⭐</p>
-          <p>"Harga terjangkau, rasa premium!"</p>
-        </div>
-      </div>
-      
-      <button className="btn">Pesan Sekarang</button>
-    </section>
-
       {/* FOOTER */}
       <footer className="footer">
-        <div className="footer-grid">
-          
-          <div>
-            <h3>ROTI BAKAR EXECUTIVE</h3>
-            <p>Roti Bakar Terpercaya</p>
-          </div>
-
-          <div>
-            <h4>Produk</h4>
-            <p>Roti Coklat</p>
-            <p>Roti Keju</p>
-            <p>Roti Strawberry</p>
-          </div>
-
-          <div>
-            <h4>Kontak</h4>
-            <p>Email: RotiBakarExecutive@gmail.com</p>
-            <p>WhatsApp: 0823-3460-5032</p>
-          </div> 
-
-        </div>
+        <h3>ROTI BAKAR EXECUTIVE</h3>
+        <p>Roti Bakar Terpercaya</p>
+        <p>Email: RotiBakarExecutive@gmail.com</p>
       </footer>
 
     </main>
