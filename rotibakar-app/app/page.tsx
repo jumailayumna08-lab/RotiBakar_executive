@@ -1,16 +1,46 @@
-import "./Landingpage.css";
+import Image from "next/image";
+
+const lokasiData = [
+  {
+    nama: "Roti Bakar Executif - Tunggangri",
+    alamat: "Tunggangri, Kec. Kalidawir, Kab. Tulungagung",
+    jam: "16:00 - 22:00",
+    telepon: "0823 - 3460 - 5032",
+    mapUrl: "https://www.google.com/maps?q=Tunggang,+Kalidawir,+Tulungagung&output=embed",
+  },
+  {
+    nama: "Roti Bakar Executif - Bendilwungu",
+    alamat: "Bendilwungu, Kec. Sumbergempol, Kab. Tulungagung",
+    jam: "16:00 - 22:00",
+    telepon: "0823 - 3460 - 5032",
+    mapUrl: "https://www.google.com/maps?q=Bendilwungu,+Sumbergempol,+Tulungagung&output=embed",
+  },
+  {
+    nama: "Roti Bakar Executif - Karangtalun",
+    alamat: "Kadangtalun, Kec. Kalidawir, Kab. Tulungagung",
+    jam: "16:00 - 22:00",
+    telepon: "0823 - 3460 - 5032",
+    mapUrl: "https://www.google.com/maps?q=Karangtalun,+Kalidawir,+Tulungagung&output=embed",
+  },
+  {
+    nama: "Roti Bakar Executif - Karangtalun",
+    alamat: "Podorejo, Kec.Sumbergempol, Kab.Tulunagagung",
+    jam: "16:00 - 21:30",
+    telepon: "0823 - 3460 - 5032",
+    mapUrl: "https://www.google.com/maps?q=Podorejo,+Sumbergempol,+Tulungagung&output=embed",
+  },
+];
 
 export default function Home() {
   return (
     <main className="container">
-
       {/* NAVBAR */}
       <header className="nav">
         <div className="logo">
+          {/* placeholder logo - ganti dengan file gambar Anda */}
           <img src="roti.jpeg" alt="logo" />
           <p>ROTI BAKAR EXECUTIVE</p>
         </div>
-
         <nav className="menu">
           <p>Beranda</p>
           <p>Layanan</p>
@@ -19,115 +49,80 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* HERO */}
-      <section className="hero">
-        <div className="hero-text">
-          <h1>ROTI BAKAR PREMIUM</h1>
-          <h2>FAVORIT</h2>
-          <p>
-            Kelezatan Premium, Topping Melimpah,
-            Higienis & Fresh Setiap Hari!
-          </p>
+      {/* HERO SECTION */}
+      <div className="hero-box">
+        <div className="hero-content">
+          <div className="hero-left">
+            <h1>ROTI BAKAR PREMIUM</h1>
+            <h2>FAVORIT</h2>
+            <p>Kelezatan Premium, Topping Melimpah, Higienis & Fresh Setiap Hari!</p>
+             <h2>Pesan Disini</h2>
+            <p>Kelezatan Premium, Topping Melimpah, Higienis & Fresh Setiap Hari!</p>
+
+          </div>
+          <div className="hero-right">
+            <img src="roti bakar.png" alt="Roti Bakar" />
+          </div>
         </div>
+      </div>
 
-        <img
-          src="/assets/38123.png"
-          alt="roti bakar.png"
-          className="hero-img"
-        />
-      </section>
-
-      {/* PRODUK */}
-      <section className="produk">
-        <h2>Menu Favorit</h2>
-        
-         <div className="produk-grid">
+      {/* PRODUK FAVORIT */}
+      <section className="section">
+        <h2>ROTI BAKAR EXECUTIVE</h2>
+        <div className="produk-grid">
           <div className="card">
-            <img src="/assets/roti-coklat.png" alt="roti coklat" />
-            <p>Roti Coklat</p>
+            <img src="https://placehold.co/200x150?text=Roti+Coklat" alt="Roti Kukus" />
+            <p>Roti Kukus</p>
           </div>
-          
           <div className="card">
-            <img src="/assets/roti-keju.png" alt="roti keju" />
-            <p>Roti Keju</p>
-          </div>
-          
-          <div className="card">
-            <img src="/assets/roti-strawberry.png" alt="roti strawberry" />
-            <p>Roti Strawberry</p>
+            <img src="https://placehold.co/200x150?text=Roti+Keju" alt="Roti bakar" />
+            <p>Roti Bakar</p>
           </div>
         </div>
       </section>
 
-      <div className="lokasi-list">
-
-        {/* KIRI */}
-      <div className="lokasi-list">
-        <div className="lokasi-card">
-          <h4>Kediri Bakar Executive</h4>
-          <p>📍 Jl. Contoh Alamat No.1</p>
-          <p>🕒 16.00–21.30</p>
-          <p>📞 0823-3460-5032</p>
+      {/* LOKASI KAMI */}
+      <section className="section">
+        <h2>Lokasi Kami</h2>
+        <div className="lokasi-grid">
+          {lokasiData.map((lokasi, idx) => (
+            <div key={idx} className="lokasi-card">
+              <div className="lokasi-info">
+                <h3>{lokasi.nama}</h3>
+                <p>📍 {lokasi.alamat}</p>
+                <p>🕒 {lokasi.jam}</p>
+                <p>📞 {lokasi.telepon}</p>
+              </div>
+              <div className="lokasi-map">
+                <iframe
+                  src={lokasi.mapUrl}
+                  title={`Peta ${lokasi.nama}`}
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+          ))}
         </div>
+      </section>
 
-        <div className="lokasi-card">
-          <h4>Paris Bakar Executive</h4>
-          <p>📍 Jl. Contoh Alamat No.2</p>
-          <p>🕒 16.00–21.30</p>
-          <p>📞 0823-3460-5032</p>
-        </div>
-
-        <div className="lokasi-card">
-          <h4>Roti Bakar Executive</h4>
-          <p>📍 Jl. Contoh Alamat No.3</p>
-          <p>🕒 16.00–21.30</p>
-          <p>📞 0823-3460-5032</p>
-        </div>
-
-        <div className="lokasi-card">
-          <h4>Roti Bakar Executive 4</h4>
-          <p>📍 Jl. Contoh Alamat No.4</p>
-          <p>🕒 16.00–21.30</p>
-          <p>📞 0823-3460-5032</p>
-        </div>
-      </div>
-      </div>
-
-      <div className="maps-list">
-        <iframe src="https://www.google.com/maps?q=-8.212,111.938&output=embed"></iframe>
-        <iframe src="https://www.google.com/maps?q=-8.210,111.940&output=embed"></iframe>
-        <iframe src="https://www.google.com/maps?q=-8.208,111.942&output=embed"></iframe>
-        <iframe src="https://www.google.com/maps?q=-8.206,111.944&output=embed"></iframe>
-      </div>
-
-      <section className="kenapa">
+      {/* MENGAPA HARUS KAMI */}
+      <section className="section">
         <h2>Mengapa Harus Roti Bakar Executive?</h2>
-        
         <div className="kenapa-grid">
           <div className="kenapa-card">
             <h4>⭐ Bahan Premium</h4>
-            <p>
-              Kami menggunakan roti berkualitas tinggi dan topping melimpah
-              untuk rasa maksimal.
-            </p>
+            <p>Kami menggunakan roti berkualitas tinggi dan topping melimpah untuk rasa maksimal.</p>
           </div>
-
-        <div className="kenapa-card">
-          <h4>🔥 Dibuat Fresh</h4>
-          <p>
-            Setiap pesanan dibuat langsung saat dipesan, selalu hangat
-            dan nikmat.
-          </p>
+          <div className="kenapa-card">
+            <h4>🔥 Dibuat Fresh</h4>
+            <p>Setiap pesanan dibuat langsung saat dipesan, selalu hangat dan nikmat.</p>
+          </div>
+          <div className="kenapa-card">
+            <h4>🏆 Kualitas Terjaga</h4>
+            <p>Proses higienis dan standar kualitas tinggi untuk kepuasan pelanggan.</p>
+          </div>
         </div>
-
-        <div className="kenapa-card">
-          <h4>🏆 Kualitas Terjaga</h4>
-          <p>
-            Proses higienis dan standar kualitas tinggi untuk kepuasan pelanggan.
-          </p>
-        </div>
-      </div>
-    </section>
+      </section>
 
       {/* FOOTER */}
       <footer className="footer">
@@ -135,7 +130,6 @@ export default function Home() {
         <p>Roti Bakar Terpercaya</p>
         <p>Email: RotiBakarExecutive@gmail.com</p>
       </footer>
-
     </main>
   );
 }
