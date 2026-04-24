@@ -19,6 +19,7 @@ body {
   align-items: center;
   padding: 15px 0;
   border-bottom: 1px solid #eee;
+  background-color: #A47148;
 }
 .logo {
   display: flex;
@@ -32,6 +33,7 @@ body {
   font-size: 1.2em;
   font-weight: bold;
   margin: 0;
+  color: #fff;
 }
 .menu {
   display: flex;
@@ -40,31 +42,91 @@ body {
 .menu p {
   margin: 0;
   cursor: pointer;
+  color: #fff;
 }
 
-/* Hero */
-.hero {
+/* ================= HERO BARU ================= */
+.hero-box {
+  margin-top: 30px;
+}
+
+.hero-content {
+  background-color: #A47148;
+  border-radius: 25px;
+  padding: 40px;
+
   display: flex;
   align-items: center;
-  gap: 40px;
-  padding: 50px 0;
-  text-align: left;
-}
-.hero-text h1, .hero-text h2 {
-  margin: 0;
-}
-.hero-text p {
-  margin-top: 15px;
-}
-.hero-img {
-  max-width: 450px;
-  width: 100%;
+  justify-content: space-between;
+  gap: 30px;
+  color: #fff;
 }
 
-/* Section Umum */
+.hero-left h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.hero-desc {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.hero-order {
+  margin-top: 25px;
+}
+
+.wa {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.hero-right img {
+  width: 280px;
+}
+
+/* ================= FITUR ================= */
+.fitur {
+  margin-top: 40px;
+}
+
+.fitur-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.fitur-card {
+  background-color: #f3e5d6;
+  padding: 20px;
+  border-radius: 12px;
+
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.fitur-card h4 {
+  margin: 0;
+}
+
+.fitur-card p {
+  margin: 5px 0 0;
+  font-size: 14px;
+}
+
+.icon {
+  font-size: 28px;
+}
+
+/* Section */
 .section {
   padding: 50px 0;
-  border-bottom: 1px solid #f0f0f0;
 }
 .section h2 {
   text-align: center;
@@ -91,55 +153,195 @@ body {
   margin-bottom: 15px;
 }
 
-/* Lokasi */
+/* ================= LOKASI ================= */
 .lokasi-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 kolom: list di kiri, peta di kanan */
-  gap: 40px;
-}
-
-.lokasi-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.lokasi-card {
-  border: 1px solid #ddd;
-  padding: 15px;
-  border-radius: 8px;
-  background-color: #fff;
-}
-
-.lokasi-card h4 {
-  margin: 0 0 10px 0;
-}
-
-.lokasi-card p {
-  margin: 5px 0;
-  font-size: 0.9em;
-}
-
-.maps-list {
-  display: grid;
-  grid-template-columns: 1fr; /* Peta tersusun ke bawah */
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-.maps-list iframe {
+.lokasi-card {
+  display: flex;
+  align-items: stretch;
+
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid #eee;
+
+  height: 180px;
+}
+
+.lokasi-info {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lokasi-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 1em;
+}
+
+.lokasi-info p {
+  margin: 2px 0;
+  font-size: 0.85em;
+  color: #666;
+}
+
+.lokasi-map {
+  flex: 1;
+  position: relative;
+  border-left: 1px solid #eee;
+}
+
+.lokasi-map iframe {
   width: 100%;
-  height: 150px; /* Tinggi peta disesuaikan */
+  height: 100%;
   border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Kenapa & Testimoni */
+.kenapa-grid, .testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.kenapa-card, .testi-card {
+  background: #fff;
+  padding: 20px;
   border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+}
+
+.btn {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 30px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 /* Footer */
 .footer {
   text-align: center;
-  padding: 40px 0;
-  margin-top: 20px;
-  background-color: #f1f1f1;
+  padding: 40px 20px;
+  margin-top: 50px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
 }
-.footer h3, .footer p {
-  margin: 5px 0;
+.footer-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  text-align: left;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-right img {
+    width: 200px;
+  }
+
+  .fitur-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lokasi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lokasi-card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .lokasi-map {
+    height: 180px;
+    border-left: none;
+    border-top: 1px solid #eee;
+  }
+}
+
+/* ================= ANIMASI CARD ================= */
+
+/* FITUR */
+.fitur-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.fitur-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* PRODUK */
+.card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* LOKASI */
+.lokasi-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.lokasi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+/* KENAPA */
+.kenapa-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.kenapa-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* TESTIMONI */
+.testi-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.testi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* EFEK KLIK */
+.fitur-card:active,
+.card:active,
+.lokasi-card:active,
+.kenapa-card:active,
+.testi-card:active {
+  transform: scale(0.96);
 }

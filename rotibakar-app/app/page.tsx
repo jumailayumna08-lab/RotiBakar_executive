@@ -7,7 +7,7 @@ export default function Home() {
       {/* NAVBAR */}
       <header className="nav">
         <div className="logo">
-          <img src="/assets/3894.png" alt="logo" />
+          <img src="roti.jpeg" alt="logo" />
           <p>ROTI BAKAR EXECUTIVE</p>
         </div>
 
@@ -19,39 +19,88 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* HERO */}
-      <section className="hero">
-        <div className="hero-text">
-          <h1>ROTI BAKAR PREMIUM</h1>
-          <h2>FAVORIT</h2>
-          <p>
-            Kelezatan Premium, Topping Melimpah,
-            Higienis & Fresh Setiap Hari!
-          </p>
-        </div>
+      {/* HERO BARU */}
+      <section className="hero-box">
+        <div className="hero-content">
 
-        <img
-          src="/assets/38123.png"
-          alt="roti bakar"
-          className="hero-img"
-        />
+          <div className="hero-left">
+            <h1>ROTI BAKAR PREMIUM<br />FAVORIT</h1>
+
+            <p className="hero-desc">
+              "Kelezatan Premium, Topping Melimpah,
+              Higienis & Fresh Setiap Hari!"
+            </p>
+
+            <div className="hero-order">
+              <p>Pesan Disini:</p>
+              <div className="wa">
+                <span>📱</span>
+                <span>0823-3460-5032</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="hero-right">
+            <img src="/roti bakar.png" alt="roti" />
+          </div>
+
+        </div>
+      </section>
+
+      {/* FITUR */}
+      <section className="fitur">
+        <div className="fitur-grid">
+
+          <div className="fitur-card">
+            <div className="icon">🏪</div>
+            <div>
+              <h4>Outlet</h4>
+              <p>Temukan lokasi outlet terdekat di Tulungagung lengkap dengan alamat dan jam operasional.</p>
+            </div>
+          </div>
+
+          <div className="fitur-card">
+            <div className="icon">💬</div>
+            <div>
+              <h4>Testimoni</h4>
+              <p>Lihat ulasan pelanggan tentang kelezatan Roti Bakar Executive.</p>
+            </div>
+          </div>
+
+          <div className="fitur-card">
+            <div className="icon">📖</div>
+            <div>
+              <h4>Daftar Harga</h4>
+              <p>Cek harga terbaru untuk semua varian menu.</p>
+            </div>
+          </div>
+
+          <div className="fitur-card">
+            <div className="icon">🍞</div>
+            <div>
+              <h4>Layanan (Menu)</h4>
+              <p>Pilihan topping lengkap dari klasik hingga premium.</p>
+            </div>
+          </div>
+
+        </div>
       </section>
 
       {/* PRODUK */}
-      <section className="produk">
+      <section className="section">
         <h2>Menu Favorit</h2>
-        
-         <div className="produk-grid">
+
+        <div className="produk-grid">
           <div className="card">
             <img src="/assets/roti-coklat.png" alt="roti coklat" />
             <p>Roti Coklat</p>
           </div>
-          
+
           <div className="card">
             <img src="/assets/roti-keju.png" alt="roti keju" />
             <p>Roti Keju</p>
           </div>
-          
+
           <div className="card">
             <img src="/assets/roti-strawberry.png" alt="roti strawberry" />
             <p>Roti Strawberry</p>
@@ -59,103 +108,113 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="lokasi-list">
+      {/* LOKASI */}
+      <section className="section" id="lokasi">
+        <h2>Lokasi Kami</h2>
 
-        {/* KIRI */}
-      <div className="lokasi-list">
-        <div className="lokasi-card">
-          <h4>Kediri Bakar Executive</h4>
-          <p>📍 Jl. Contoh Alamat No.1</p>
-          <p>🕒 16.00–21.30</p>
-          <p>📞 0823-3460-5032</p>
+        <div className="lokasi-grid">
+
+          <div className="lokasi-card">
+            <div className="lokasi-info">
+              <h3>Roti Bakar Executive</h3>
+              <p>Tunggangri, Kalidawir</p>
+              <p>16:00 - 21:30</p>
+              <p>0823-3460-5032</p>
+            </div>
+            <div className="lokasi-map">
+              <iframe src="https://www.google.com/maps?q=Roti+Bakar+Executive+Tunggangri+Tulungagung&output=embed"></iframe>
+            </div>
+          </div>
+
+          <div className="lokasi-card">
+            <div className="lokasi-info">
+              <h3>Roti Bakar Executive</h3>
+              <p>Bendilwungu, Sumbergempol</p>
+              <p>16:00 - 21:30</p>
+              <p>0823-3460-5032</p>
+            </div>
+            <div className="lokasi-map">
+              <iframe src="https://www.google.com/maps?q=Roti+Bakar+Executive+Bendilwungu+Tulungagung&output=embed"></iframe>
+            </div>
+          </div>
+
+          <div className="lokasi-card">
+            <div className="lokasi-info">
+              <h3>Roti Bakar Executive</h3>
+              <p>Podorejo, Ngantru</p>
+              <p>16:00 - 21:30</p>
+              <p>0823-3460-5032</p>
+            </div>
+            <div className="lokasi-map">
+              <iframe src="https://www.google.com/maps?q=Roti+Bakar+Executive+Podorejo+Tulungagung&output=embed"></iframe>
+            </div>
+          </div>
+
+          <div className="lokasi-card">
+            <div className="lokasi-info">
+              <h3>Roti Bakar Executive</h3>
+              <p>Karangtalun, Kalidawir</p>
+              <p>16:00 - 21:30</p>
+              <p>0823-3460-5032</p>
+            </div>
+            <div className="lokasi-map">
+              <iframe src="https://www.google.com/maps?q=Roti+Bakar+Executive+Karangtalun+Tulungagung&output=embed"></iframe>
+            </div>
+          </div>
+
         </div>
+      </section>
 
-        <div className="lokasi-card">
-          <h4>Paris Bakar Executive</h4>
-          <p>📍 Jl. Contoh Alamat No.2</p>
-          <p>🕒 16.00–21.30</p>
-          <p>📞 0823-3460-5032</p>
-        </div>
-
-        <div className="lokasi-card">
-          <h4>Roti Bakar Executive</h4>
-          <p>📍 Jl. Contoh Alamat No.3</p>
-          <p>🕒 16.00–21.30</p>
-          <p>📞 0823-3460-5032</p>
-        </div>
-
-        <div className="lokasi-card">
-          <h4>Roti Bakar Executive 4</h4>
-          <p>📍 Jl. Contoh Alamat No.4</p>
-          <p>🕒 16.00–21.30</p>
-          <p>📞 0823-3460-5032</p>
-        </div>
-      </div>
-      </div>
-
-      <div className="maps-list">
-        <iframe src="https://www.google.com/maps?q=-8.212,111.938&output=embed"></iframe>
-        <iframe src="https://www.google.com/maps?q=-8.210,111.940&output=embed"></iframe>
-        <iframe src="https://www.google.com/maps?q=-8.208,111.942&output=embed"></iframe>
-        <iframe src="https://www.google.com/maps?q=-8.206,111.944&output=embed"></iframe>
-      </div>
-
-      <section className="kenapa">
+      {/* KENAPA */}
+      <section className="section kenapa">
         <h2>Mengapa Harus Roti Bakar Executive?</h2>
-        
+
         <div className="kenapa-grid">
           <div className="kenapa-card">
             <h4>⭐ Bahan Premium</h4>
-            <p>
-              Kami menggunakan roti berkualitas tinggi dan topping melimpah
-              untuk rasa maksimal.
-            </p>
+            <p>Bahan berkualitas dengan topping melimpah.</p>
           </div>
 
-        <div className="kenapa-card">
-          <h4>🔥 Dibuat Fresh</h4>
-          <p>
-            Setiap pesanan dibuat langsung saat dipesan, selalu hangat
-            dan nikmat.
-          </p>
+          <div className="kenapa-card">
+            <h4>🔥 Fresh</h4>
+            <p>Dibuat langsung saat dipesan.</p>
+          </div>
+
+          <div className="kenapa-card">
+            <h4>🏆 Kualitas</h4>
+            <p>Proses higienis dan terjaga.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONI */}
+      <section className="section testimoni">
+        <h2>Apa Kata Pelanggan</h2>
+
+        <div className="testi-grid">
+          <div className="testi-card">
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>"Enak banget!"</p>
+          </div>
+
+          <div className="testi-card">
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>"Langganan terus"</p>
+          </div>
+
+          <div className="testi-card">
+            <p>⭐⭐⭐⭐⭐</p>
+            <p>"Worth it"</p>
+          </div>
         </div>
 
-        <div className="kenapa-card">
-          <h4>🏆 Kualitas Terjaga</h4>
-          <p>
-            Proses higienis dan standar kualitas tinggi untuk kepuasan pelanggan.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section className="testimoni">
-      <h2>Apa Kata Pelanggan Setia Kami</h2>
-      
-      <div className="testi-grid">
-        <div className="testi-card">
-          <p>⭐⭐⭐⭐⭐</p>
-          <p>"Rotinya enak banget, toppingnya melimpah!"</p>
-        </div>
-
-        <div className="testi-card">
-          <p>⭐⭐⭐⭐⭐</p>
-          <p>"Selalu beli di sini, gak pernah kecewa."</p>
-        </div>
-
-        <div className="testi-card">
-          <p>⭐⭐⭐⭐⭐</p>
-          <p>"Harga terjangkau, rasa premium!"</p>
-        </div>
-      </div>
-      
-      <button className="btn">Pesan Sekarang</button>
-    </section>
+        <button className="btn">Pesan Sekarang</button>
+      </section>
 
       {/* FOOTER */}
       <footer className="footer">
         <div className="footer-grid">
-          
+
           <div>
             <h3>ROTI BAKAR EXECUTIVE</h3>
             <p>Roti Bakar Terpercaya</p>
@@ -172,7 +231,7 @@ export default function Home() {
             <h4>Kontak</h4>
             <p>Email: RotiBakarExecutive@gmail.com</p>
             <p>WhatsApp: 0823-3460-5032</p>
-          </div> 
+          </div>
 
         </div>
       </footer>
