@@ -7,7 +7,7 @@ export default function Home() {
       {/* NAVBAR */}
       <header className="nav">
         <div className="logo">
-          <img src="/assets/3894.png" alt="logo" />
+          <img src="roti.jpeg" alt="logo" />
           <p>ROTI BAKAR EXECUTIVE</p>
         </div>
 
@@ -32,7 +32,7 @@ export default function Home() {
 
         <img
           src="/assets/38123.png"
-          alt="roti bakar"
+          alt="roti bakar.png"
           className="hero-img"
         />
       </section>
