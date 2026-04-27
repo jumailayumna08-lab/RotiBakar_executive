@@ -44,12 +44,16 @@
   gap: 25px;
 }
 
-.menu p {
-  margin: 0;
-  cursor: pointer;
-  color: #fff;
+.menu a {
+  text-decoration: none;
+  color: #ffffff;
   font-weight: 500;
-  transition: opacity 0.2s;
+  margin: 0 10px;
+  transition: 0.2s;
+}
+
+.menu a:hover {
+  color: #533115;
 }
 
 .menu p:hover {
@@ -271,6 +275,10 @@
 }
 
 /* ========== LOKASI DENGAN MAP ========== */
+.outlet {
+  text-align: center; 
+}
+
 .lokasi-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -344,6 +352,10 @@
 }
 
 /* ========== TESTIMONI HORIZONTAL SCROLL ========== */
+.testimoni {
+  text-align: center;
+}
+
 .testimoni-wrapper {
   width: 100%;
   overflow-x: auto;
@@ -404,6 +416,10 @@
 }
 
 /* ========== LAYANAN GRID ========== */
+.layanan {
+  text-align: center;
+}
+
 .layanan-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

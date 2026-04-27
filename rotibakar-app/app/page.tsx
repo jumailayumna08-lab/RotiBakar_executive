@@ -180,16 +180,16 @@ export default function Home() {
           <p>ROTI BAKAR EXECUTIVE</p>
         </div>
         <nav className="menu">
-          <p>Beranda</p>
-          <p>Layanan</p>
-          <p>Outlet</p>
-          <p>Tentang Kami</p>
+          <a href="#beranda">Beranda</a>
+          <a href="#layanan">Layanan</a>
+          <a href="#outlet">Outlet</a>
+          <a href="#testimoni">Testimoni</a>
         </nav>
       </header>
 
       <div className="container">
         {/* HERO SECTION */}
-        <div className="hero-box">
+        <div className="hero-box" id="beranda">
           <div className="hero-content">
             <div className="hero-left">
               <h1>ROTI BAKAR PREMIUM</h1>
@@ -204,9 +204,10 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <br/>
 
         {/* LAYANAN / MENU */}
-        <section className="section">
+        <section className="layanan" id="layanan">
           <h2>Layanan (Menu)</h2>
           <p className="subtitle">Jelajahi berbagai pilihan topping melimpah, mulai dari varian klasik hingga premium Executive.</p>
           <div className="layanan-grid">
@@ -226,7 +227,7 @@ export default function Home() {
         </section>
 
         {/* DAFTAR HARGA */}
-        <section className="harga-section">
+        <section className="harga-section" id="harga">
           <h2>Daftar Harga</h2>
           <p className="subtitle">Cek daftar harga terbaru untuk setiap varian rasa dan paket spesial dari Roti Bakar Executive.</p>
           
@@ -284,7 +285,7 @@ export default function Home() {
         </div>
 
         {/* OUTLET SECTION */}
-        <section className="section">
+        <section className="outlet" id="outlet">
           <h2>Outlet</h2>
           <p className="subtitle">Temukan lokasi outlet terdekat di Tulungagung lengkap dengan alamat detail dan jam operasional kami.</p>
           <div className="lokasi-grid">
@@ -346,9 +347,10 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <br/>
 
         {/* TESTIMONI - HORIZONTAL SCROLL */}
-        <section className="section">
+        <section className="testimoni" id="testimoni">
           <h2>Testimoni</h2>
           <p className="subtitle">Lihat ulasan jujur dari pelanggan setia kami tentang kelezatan Roti Bakar Executive.</p>
           <div className="testimoni-wrapper">
@@ -369,29 +371,30 @@ export default function Home() {
         </section>
 
       {/* FOOTER - SEPERTI GAMBAR */}
+    <section className="outlet" id="outlet">
       <footer className="footer">
         <div className="footer-container">
           <div className="footer-brand">
             <h3>ROTI BAKAR EXECUTIVE</h3>
             <p>Roti Bakar Terpercaya</p>
           </div>
-          
           <div className="footer-section">
             <h4>Outlet</h4>
             <ul>
-              <li>Cabang Tunggangri</li>
-              <li>Cabang Bendilwungu</li>
-              <li>Cabang Podorejo</li>
-              <li>Cabang Karangtalun</li>
+              <li><a href="#outlet">Cabang Tunggangri</a></li>
+              <li><a href="#outlet">Cabang Bendilwungu</a></li>
+              <li><a href="#outlet">Cabang Podorejo</a></li>
+              <li><a href="#outlet">Cabang Karangtalun</a></li>
             </ul>
           </div>
           
           <div className="footer-section">
             <h4>Perusahaan</h4>
             <ul>
-              <li><a href="#">Beranda</a></li>
-              <li><a href="#">Tentang Kami</a></li>
-              <li><a href="#">Outlet Kami</a></li>
+              <li><a href="#beranda">Beranda</a></li>
+              <li><a href="#layanan">Layanan</a></li>
+              <li><a href="#outlet">Outlet Kami</a></li>
+              <li><a href="#testimoni">Testimoni</a></li>
             </ul>
           </div>
           
@@ -408,6 +411,7 @@ export default function Home() {
           <p>&copy; 2026 Roti Bakar Executive. All rights reserved.</p>
         </div>
       </footer>
+    </section>
 
       {/* MODAL */}
       <MenuModal 
