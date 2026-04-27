@@ -205,54 +205,22 @@ export default function Home() {
           </div>
         </div>
 
-        {/* OUTLET SECTION */}
+        {/* LAYANAN / MENU */}
         <section className="section">
-          <h2>Outlet</h2>
-          <p className="subtitle">Temukan lokasi outlet terdekat di Tulungagung lengkap dengan alamat detail dan jam operasional kami.</p>
-          <div className="lokasi-grid">
-            {lokasiData.map((lokasi, idx) => (
-              <div key={idx} className="lokasi-card">
-                <div className="lokasi-info">
-                  <h3>{lokasi.nama}</h3>
-                  <p>📍 {lokasi.alamat}</p>
-                  <p>🕒 {lokasi.jam}</p>
-                  <p>📞 {lokasi.telepon}</p>
-                  <button 
-                    className="review-btn"
-                    onClick={() => openGoogleReview(lokasi.nama.split(" - ")[1])}
-                  >
-                    ⭐ Lihat Ulasan di Google
-                  </button>
-                </div>
-                <div className="lokasi-map">
-                  <iframe
-                    src={lokasi.mapUrl}
-                    title={`Peta ${lokasi.nama}`}
-                    loading="lazy"
-                  ></iframe>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* TESTIMONI - HORIZONTAL SCROLL */}
-        <section className="section">
-          <h2>Testimoni</h2>
-          <p className="subtitle">Lihat ulasan jujur dari pelanggan setia kami tentang kelezatan Roti Bakar Executive.</p>
-          <div className="testimoni-wrapper">
-            <div className="testimoni-scroll">
-              {testimoniData.map((testi) => (
-                <div key={testi.id} className="testimoni-card">
-                  <div className="testimoni-rating">{testi.rating}</div>
-                  <p className="testimoni-komentar">"{testi.komentar}"</p>
-                  <div className="testimoni-footer">
-                    <h4>- {testi.nama}</h4>
-                    <span className="testimoni-lokasi">📍 {testi.lokasi}</span>
-                    <span className="testimoni-tanggal">{testi.tanggal}</span>
-                  </div>
-                </div>
-              ))}
+          <h2>Layanan (Menu)</h2>
+          <p className="subtitle">Jelajahi berbagai pilihan topping melimpah, mulai dari varian klasik hingga premium Executive.</p>
+          <div className="layanan-grid">
+            <div className="layanan-card">
+              <div className="layanan-icon">🥮</div>
+              <h3>Roti Kukus</h3>
+              <p>Medium 5 Potong</p>
+              <span>8+ Varian Rasa</span>
+            </div>
+            <div className="layanan-card">
+              <div className="layanan-icon">🔥</div>
+              <h3>Roti Bakar</h3>
+              <p>Large 10 Potong</p>
+              <span>30+ Varian Rasa</span>
             </div>
           </div>
         </section>
@@ -313,33 +281,92 @@ export default function Home() {
             </div>
           )}
         </section>
+        </div>
 
-        {/* LAYANAN / MENU */}
+        {/* OUTLET SECTION */}
         <section className="section">
-          <h2>Layanan (Menu)</h2>
-          <p className="subtitle">Jelajahi berbagai pilihan topping melimpah, mulai dari varian klasik hingga premium Executive.</p>
-          <div className="layanan-grid">
-            <div className="layanan-card">
-              <div className="layanan-icon">🥮</div>
-              <h3>Roti Kukus</h3>
-              <p>Medium 5 Potong</p>
-              <span>8+ Varian Rasa</span>
+          <h2>Outlet</h2>
+          <p className="subtitle">Temukan lokasi outlet terdekat di Tulungagung lengkap dengan alamat detail dan jam operasional kami.</p>
+          <div className="lokasi-grid">
+            {lokasiData.map((lokasi, idx) => (
+              <div key={idx} className="lokasi-card">
+                <div className="lokasi-info">
+                  <h3>{lokasi.nama}</h3>
+                  <p>📍 {lokasi.alamat}</p>
+                  <p>🕒 {lokasi.jam}</p>
+                  <p>📞 {lokasi.telepon}</p>
+                  <button 
+                    className="review-btn"
+                    onClick={() => openGoogleReview(lokasi.nama.split(" - ")[1])}
+                  >
+                    ⭐ Lihat Ulasan di Google
+                  </button>
+                </div>
+                <div className="lokasi-map">
+                  <iframe
+                    src={lokasi.mapUrl}
+                    title={`Peta ${lokasi.nama}`}
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="kenapa-section">
+          <h2>Mengapa Harus Roti Bakar Executive?</h2>
+          
+          <div className="kenapa-grid">
+            <div className="kenapa-card">
+              <div className="kenapa-icon">🍞</div>
+              <h3>Roti Berkualitas</h3>
+              <p>
+              Kami menggunakan roti pilihan yang lembut, higienis, dan dipanggang
+              dengan sempurna setiap hari.
+              </p>
             </div>
-            <div className="layanan-card">
-              <div className="layanan-icon">🔥</div>
-              <h3>Roti Bakar</h3>
-              <p>Large 10 Potong</p>
-              <span>30+ Varian Rasa</span>
+              
+            <div className="kenapa-card">
+              <div className="kenapa-icon">✨</div>
+              <h3>Topping Melimpah</h3>
+              <p>
+              Setiap roti diisi dengan topping favorit seperti cokelat, keju,
+              dan varian lainnya dengan rasa yang maksimal.
+              </p>
             </div>
-            <div className="layanan-card">
-              <div className="layanan-icon">🎁</div>
-              <h3>Paket Hemat</h3>
-              <p>Mix & Match</p>
-              <span>Harga Spesial</span>
+
+            <div className="kenapa-card">
+              <div className="kenapa-icon">🏆</div>
+              <h3>Kualitas Terjamin</h3>
+              <p>
+              Diproses dengan standar kebersihan tinggi dan bahan berkualitas
+              untuk kepuasan pelanggan.
+              </p>
             </div>
           </div>
         </section>
-      </div>
+
+        {/* TESTIMONI - HORIZONTAL SCROLL */}
+        <section className="section">
+          <h2>Testimoni</h2>
+          <p className="subtitle">Lihat ulasan jujur dari pelanggan setia kami tentang kelezatan Roti Bakar Executive.</p>
+          <div className="testimoni-wrapper">
+            <div className="testimoni-scroll">
+              {testimoniData.map((testi) => (
+                <div key={testi.id} className="testimoni-card">
+                  <div className="testimoni-rating">{testi.rating}</div>
+                  <p className="testimoni-komentar">"{testi.komentar}"</p>
+                  <div className="testimoni-footer">
+                    <h4>- {testi.nama}</h4>
+                    <span className="testimoni-lokasi">📍 {testi.lokasi}</span>
+                    <span className="testimoni-tanggal">{testi.tanggal}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
       {/* FOOTER - SEPERTI GAMBAR */}
       <footer className="footer">
