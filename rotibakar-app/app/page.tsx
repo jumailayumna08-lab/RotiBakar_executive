@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import MenuModal from "./components/MenuModal";
 
 // Data lokasi DENGAN MAP
@@ -152,6 +152,12 @@ export default function Home() {
   const [modalTitle, setModalTitle] = useState("");
   const [modalItems, setModalItems] = useState<Array<{nama: string; harga: number}>>([]);
 
+  // Refs untuk setiap section
+  const berandaRef = useRef<HTMLDivElement>(null);
+  const layananRef = useRef<HTMLDivElement>(null);
+  const outletRef = useRef<HTMLDivElement>(null);
+  const testimoniRef = useRef<HTMLDivElement>(null);
+
   const openModal = (title: string, items: typeof menuMedium) => {
     setModalTitle(title);
     setModalItems(items);
@@ -171,6 +177,23 @@ export default function Home() {
     window.open(`https://www.google.com/search?q=${searchQuery}`, "_blank");
   };
 
+  // Fungsi scroll halus ke section
+  const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>) => {
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ 
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  };
+
+  // Fungsi untuk membuka WhatsApp
+  const openWhatsApp = () => {
+    const phoneNumber = "6282334605032"; // Nomor tanpa tanda hubung dan dengan kode negara 62
+    const message = encodeURIComponent("Halo, saya ingin memesan Roti Bakar Executive");
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+  };
+
   return (
     <main>
       {/* NAVBAR */}
@@ -180,16 +203,56 @@ export default function Home() {
           <p>ROTI BAKAR EXECUTIVE</p>
         </div>
         <nav className="menu">
-          <a href="#beranda">Beranda</a>
-          <a href="#layanan">Layanan</a>
-          <a href="#outlet">Outlet</a>
-          <a href="#testimoni">Testimoni</a>
+          <a 
+            href="#beranda" 
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(berandaRef);
+            }}
+          >
+            Beranda
+          </a>
+          <a 
+            href="#layanan" 
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(layananRef);
+            }}
+          >
+            Layanan
+          </a>
+          <a 
+            href="#outlet" 
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(outletRef);
+            }}
+          >
+            Outlet
+          </a>
+          <a 
+            href="#testimoni" 
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(testimoniRef);
+            }}
+          >
+            Testimoni
+          </a>
         </nav>
       </header>
 
+      {/* TOMBOL WHATSAPP FLOATING */}
+      <div className="wa-float">
+        <a onClick={openWhatsApp} style={{ cursor: "pointer" }}>
+          <span className="wa-icon">💬</span>
+          <span>Pesan via WhatsApp</span>
+        </a>
+      </div>
+
       <div className="container">
         {/* HERO SECTION */}
-        <div className="hero-box" id="beranda">
+        <div className="hero-box" id="beranda" ref={berandaRef}>
           <div className="hero-content">
             <div className="hero-left">
               <h1>ROTI BAKAR PREMIUM</h1>
@@ -207,7 +270,7 @@ export default function Home() {
         <br/>
 
         {/* LAYANAN / MENU */}
-        <section className="layanan" id="layanan">
+        <section className="layanan" id="layanan" ref={layananRef}>
           <h2>Layanan (Menu)</h2>
           <p className="subtitle">Jelajahi berbagai pilihan topping melimpah, mulai dari varian klasik hingga premium Executive.</p>
           <div className="layanan-grid">
@@ -272,7 +335,9 @@ export default function Home() {
                 </thead>
                 <tbody>
                   {previewLarge.map((item, idx) => (
-                    <tr key={idx}><td>{item.nama}</td><td className="harga-column">Rp {item.harga.toLocaleString('id-ID')}</td></tr>
+                    <tr key={idx}><td>{item.nama}</td>
+                      <td className="harga-column">Rp {item.harga.toLocaleString('id-ID')}</td>
+                    </tr>
                   ))}
                 </tbody>
               </table>
@@ -285,7 +350,7 @@ export default function Home() {
         </div>
 
         {/* OUTLET SECTION */}
-        <section className="outlet" id="outlet">
+        <section className="section" id="outlet" ref={outletRef}>
           <h2>Outlet</h2>
           <p className="subtitle">Temukan lokasi outlet terdekat di Tulungagung lengkap dengan alamat detail dan jam operasional kami.</p>
           <div className="lokasi-grid">
@@ -350,7 +415,7 @@ export default function Home() {
         <br/>
 
         {/* TESTIMONI - HORIZONTAL SCROLL */}
-        <section className="testimoni" id="testimoni">
+        <section className="testimoni" id="testimoni" ref={testimoniRef}>
           <h2>Testimoni</h2>
           <p className="subtitle">Lihat ulasan jujur dari pelanggan setia kami tentang kelezatan Roti Bakar Executive.</p>
           <div className="testimoni-wrapper">
@@ -371,7 +436,7 @@ export default function Home() {
         </section>
 
       {/* FOOTER - SEPERTI GAMBAR */}
-    <section className="outlet" id="outlet">
+    <section className="outlet">
       <footer className="footer">
         <div className="footer-container">
           <div className="footer-brand">
@@ -381,20 +446,20 @@ export default function Home() {
           <div className="footer-section">
             <h4>Outlet</h4>
             <ul>
-              <li><a href="#outlet">Cabang Tunggangri</a></li>
-              <li><a href="#outlet">Cabang Bendilwungu</a></li>
-              <li><a href="#outlet">Cabang Podorejo</a></li>
-              <li><a href="#outlet">Cabang Karangtalun</a></li>
+              <li><a href="#outlet" onClick={(e) => { e.preventDefault(); scrollToSection(outletRef); }}>Cabang Tunggangri</a></li>
+              <li><a href="#outlet" onClick={(e) => { e.preventDefault(); scrollToSection(outletRef); }}>Cabang Bendilwungu</a></li>
+              <li><a href="#outlet" onClick={(e) => { e.preventDefault(); scrollToSection(outletRef); }}>Cabang Podorejo</a></li>
+              <li><a href="#outlet" onClick={(e) => { e.preventDefault(); scrollToSection(outletRef); }}>Cabang Karangtalun</a></li>
             </ul>
           </div>
           
           <div className="footer-section">
             <h4>Perusahaan</h4>
             <ul>
-              <li><a href="#beranda">Beranda</a></li>
-              <li><a href="#layanan">Layanan</a></li>
-              <li><a href="#outlet">Outlet Kami</a></li>
-              <li><a href="#testimoni">Testimoni</a></li>
+              <li><a href="#beranda" onClick={(e) => { e.preventDefault(); scrollToSection(berandaRef); }}>Beranda</a></li>
+              <li><a href="#layanan" onClick={(e) => { e.preventDefault(); scrollToSection(layananRef); }}>Layanan</a></li>
+              <li><a href="#outlet" onClick={(e) => { e.preventDefault(); scrollToSection(outletRef); }}>Outlet Kami</a></li>
+              <li><a href="#testimoni" onClick={(e) => { e.preventDefault(); scrollToSection(testimoniRef); }}>Testimoni</a></li>
             </ul>
           </div>
           
@@ -410,7 +475,7 @@ export default function Home() {
         <div className="footer-bottom">
           <p>&copy; 2026 Roti Bakar Executive. All rights reserved.</p>
         </div>
-      </footer>
+      </footer> 
     </section>
 
       {/* MODAL */}

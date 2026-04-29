@@ -50,17 +50,14 @@
   font-weight: 500;
   margin: 0 10px;
   transition: 0.2s;
+  cursor: pointer;
 }
 
 .menu a:hover {
   color: #533115;
 }
 
-.menu p:hover {
-  opacity: 0.8;
-}
-
-/* ========== HERO ========== */
+/* ========== HERO SECTION ========== */
 .hero-box {
   margin-top: 30px;
 }
@@ -68,39 +65,116 @@
 .hero-content {
   background-color: #A47148;
   border-radius: 25px;
-  padding: 40px;
+  padding: 50px 45px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #fff;
+  min-height: 450px;
 }
 
 .hero-left h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  font-weight: bold;
 }
 
 .hero-left h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+  color: #FFE0B5;
 }
 
 .hero-left p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   opacity: 0.95;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+/* BADGE KEUNGGULAN */
+.hero-badges {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+  max-width: 450px;
+}
+
+.badge {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 12px 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.badge:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.25);
+  border-color: rgba(255,255,255,0.4);
+}
+
+.badge-icon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.badge-title {
+  font-size: 0.95rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.badge-desc {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  display: block;
 }
 
 .hero-right img {
-  width: 280px;
-  border-radius: 15px;
+  width: 320px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
 }
 
+.hero-right img:hover {
+  transform: scale(1.02);
+}
+
+/* STYLE PESAN DISINI */
 .hero-contact {
-  margin-top: 20px;
-  padding: 10px 15px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 10px;
+  margin-top: 25px;
+  padding: 12px 20px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 12px;
   display: inline-block;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-contact:hover {
+  background: rgba(255,255,255,0.35);
+  transform: translateY(-2px);
+}
+
+.hero-contact p {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.hero-contact strong {
+  font-size: 1.2rem;
+  color: #FFE0B5;
+  font-weight: bold;
 }
 
 /* ========== SECTION UMUM ========== */
@@ -320,6 +394,39 @@
 .lokasi-info p {
   margin: 6px 0;
   font-size: 12px;
+}
+
+/* FLOATING WHATSAPP BUTTON */
+.wa-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+}
+
+.wa-float a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.wa-float a:hover {
+  background: #1ebe5d;
+  transform: translateY(-3px);
+}
+
+.wa-icon {
+  font-size: 18px;
 }
 
 .lokasi-map {
@@ -556,7 +663,7 @@
   font-size: 1rem;
 }
 
-/* ========== FOOTER BARU ========== */
+/* ========== FOOTER ========== */
 .footer {
   background: #2c2c2c;
   color: #fff;
@@ -626,7 +733,133 @@
   font-size: 14px;
 }
 
+/* ========== INFO SECTION ========== */
+.info-section {
+  margin: 30px 0;
+}
+
+.info-card {
+  background: linear-gradient(135deg, #A47148 0%, #c48a5c 100%);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.info-card h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.info-card p {
+  font-size: 1rem;
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+/* ========== MENGAPA HARUS SECTION ========== */
+.kenapa-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.kenapa-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #8B4513;
+}
+
+.kenapa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.kenapa-card {
+  background-color: #F5E6D3;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kenapa-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.kenapa-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.kenapa-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #8B4513;
+}
+
+.kenapa-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
 /* ========== RESPONSIVE ========== */
+@media (max-width: 968px) {
+  .hero-content {
+    padding: 40px 35px;
+    min-height: auto;
+  }
+  
+  .hero-left h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-left h2 {
+    font-size: 1.6rem;
+  }
+  
+  .hero-left p {
+    font-size: 1rem;
+  }
+  
+  .hero-right img {
+    width: 280px;
+  }
+  
+  .hero-badges {
+    gap: 12px;
+    max-width: 400px;
+  }
+  
+  .badge {
+    padding: 10px 12px;
+  }
+  
+  .badge-icon {
+    font-size: 24px;
+  }
+  
+  .badge-title {
+    font-size: 0.85rem;
+  }
+  
+  .badge-desc {
+    font-size: 0.7rem;
+  }
+}
+
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;
@@ -643,11 +876,56 @@
   .hero-content {
     flex-direction: column;
     text-align: center;
+    padding: 35px 25px;
+  }
+  
+  .hero-left h1 {
+    font-size: 1.6rem;
+  }
+  
+  .hero-left h2 {
+    font-size: 1.3rem;
+  }
+  
+  .hero-left p {
+    font-size: 0.95rem;
+  }
+  
+  .hero-badges {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 100%;
+    justify-items: center;
+  }
+  
+  .badge {
+    padding: 8px 10px;
+    min-width: 140px;
+  }
+  
+  .badge-icon {
+    font-size: 22px;
+  }
+  
+  .badge-title {
+    font-size: 0.8rem;
+  }
+  
+  .badge-desc {
+    font-size: 0.65rem;
   }
   
   .hero-right img {
-    margin-top: 20px;
-    width: 200px;
+    margin-top: 25px;
+    width: 220px;
+  }
+  
+  .hero-contact {
+    padding: 10px 18px;
+  }
+  
+  .hero-contact strong {
+    font-size: 1rem;
   }
   
   .icon-grid {
@@ -704,33 +982,12 @@
   .section h2 {
     font-size: 1.5rem;
   }
-}
-/* ========== INFO SECTION (4 KOTAK) ========== */
-.info-section {
-  margin: 30px 0;
-}
-
-.info-card {
-  background: linear-gradient(135deg, #A47148 0%, #c48a5c 100%);
-  border-radius: 20px;
-  padding: 30px;
-  text-align: center;
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.info-icon {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
-
-.info-card h2 {
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-}
-
-.info-card p {
-  font-size: 1rem;
-  opacity: 0.95;
-  line-height: 1.5;
+  
+  .kenapa-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .kenapa-section h2 {
+    font-size: 1.5rem;
+  }
 }
